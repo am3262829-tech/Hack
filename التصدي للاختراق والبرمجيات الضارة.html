@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>التصدي للاختراق والبرمجيات الضارة</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+:root{--navy:#101F35;--teal:#26B9AD;--vio:#8268D9;--gold:#E8B86D;--bg:#F8FAFC;--bg2:#EDF1F5;--tx:#526174;--card:#fff;--h:#101F35;--ok:#1f9d6b;--bad:#d64545;--sh:0 4px 18px rgba(16,31,53,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1522;--bg2:#121c2c;--tx:#b3bfcd;--card:#17233a;--h:#e9eff7}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:Tajawal,Tahoma,sans-serif;background:var(--bg);color:var(--tx);line-height:1.8}
+h1,h2,h3,h4{color:var(--h);margin:0 0 .5rem;line-height:1.4}
+section{padding:64px 18px}.alt{background:var(--bg2)}
+.w{max-width:960px;margin:auto}
+.sub{margin:0 0 24px}
+header{position:sticky;top:0;z-index:20;background:var(--navy);padding:0 18px}
+header .w{display:flex;align-items:center;justify-content:space-between;height:58px}
+header b{color:#fff}
+nav a{color:#cfd8e3;text-decoration:none;margin-inline-start:14px;font-size:.9rem}
+nav a:hover{color:var(--teal)}
+#mb{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+@media(max-width:820px){#mb{display:block}nav{display:none;position:absolute;top:58px;right:0;left:0;background:var(--navy);padding:10px 18px}nav.o{display:block}nav a{display:block;margin:0;padding:8px 0}}
+.hero{background:linear-gradient(160deg,var(--navy),#1b3350);color:#fff;padding:70px 18px}
+.hero .w{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.hero h1{color:#fff;font-size:clamp(1.8rem,5vw,2.8rem)}
+.hero p{color:#cfd8e3}.hero div{flex:1 1 300px}
+.hero svg{width:200px;max-width:60%;margin:auto;animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.b{background:var(--teal);color:var(--navy);border:0;border-radius:12px;padding:10px 20px;font:700 1rem Tajawal,sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s;margin:4px 0 4px 8px}
+.b:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.b.s{background:transparent;color:#fff;border:2px solid var(--vio)}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--sh);padding:20px;margin-bottom:14px}
+select,input[type=text],input[type=password]{width:100%;padding:12px;border:2px solid var(--bg2);border-radius:12px;font:1rem Tajawal,sans-serif;background:var(--card);color:var(--h)}
+select:focus,input:focus{outline:none;border-color:var(--teal)}
+.bar{height:10px;background:var(--bg2);border-radius:9px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:0;background:var(--teal);transition:.4s}
+ul.ck{list-style:none;padding:0;margin:0}
+.ck li{padding:10px 12px;border-radius:10px;background:var(--bg);margin-bottom:8px}
+.ck label{cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.ck input{accent-color:var(--teal);width:20px;height:20px;margin-top:5px;flex:none}
+.ck li.d span{text-decoration:line-through;opacity:.6}
+.av{border-inline-start:4px solid var(--bad)}
+.warn{background:rgba(232,184,109,.2);border-inline-start:4px solid var(--gold);padding:10px 14px;border-radius:10px;margin:10px 0;color:var(--h);font-size:.92rem}
+.pop{animation:pp .4s}
+@keyframes pp{from{opacity:0;transform:translateY(10px)}}
+.opt{display:block;width:100%;text-align:start;background:var(--card);border:2px solid var(--bg2);border-radius:12px;padding:12px;margin:8px 0;font:1rem Tajawal,sans-serif;color:var(--h);cursor:pointer;transition:.2s}
+.opt:hover:not(:disabled){border-color:var(--vio)}
+.opt.ok{border-color:var(--ok);background:rgba(31,157,107,.12)}.opt.no{border-color:var(--bad);background:rgba(214,69,69,.12)}
+.ex{margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--bg);color:var(--h)}
+.tag{display:inline-block;background:var(--vio);color:#fff;border-radius:20px;padding:0 12px;font-size:.8rem}
+.gl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.nav-s{background:var(--navy);color:#fff}.nav-s h2,.nav-s h3{color:#fff}.nav-s .card{background:#1b3350;color:#dbe4ee}
+.hp{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.num{background:var(--teal);color:var(--navy);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;margin-bottom:8px}
+.ph{border:2px dashed var(--gold);border-radius:14px;padding:16px;color:var(--h)}
+footer{background:var(--navy);color:#cfd8e3;text-align:center;padding:34px 18px}
+footer a{color:var(--teal);margin:0 8px;text-decoration:none}
+#up{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--vio);color:#fff;font-size:1.3rem;cursor:pointer;display:none;box-shadow:var(--sh)}
+</style>
+</head>
+<body>
+<header><div class="w"><b>🛡️ التصدي للاختراق والبرمجيات الضارة</b><button id="mb" aria-label="القائمة">☰</button>
+<nav id="nv"><a href="#emergency">الطوارئ</a><a href="#password">كلمة المرور</a><a href="#links">الروابط</a><a href="#story">المغامرة</a><a href="#quiz">الاختبار</a><a href="#daily">يوميًا</a><a href="#gloss">القاموس</a><a href="#help">المساعدة</a></nav></div></header>
+
+<div class="hero"><div class="w"><div>
+<h1>تعرّضت لموقف مشبوه؟ تصرّف الآن</h1>
+<p>خطط نجاة سريعة وأدوات عملية تستخدمها وقت الحاجة، مباشرة من متصفحك وبدون تسجيل.</p>
+<a class="b" href="#emergency">أحتاج مساعدة الآن</a><a class="b s" href="#daily">جهّز حقيبتي</a></div>
+<svg viewBox="0 0 200 220" aria-hidden="true"><path d="M100 10 L180 40 V110 C180 160 145 195 100 212 C55 195 20 160 20 110 V40Z" fill="#26B9AD"/><path d="M100 28 L164 51 V110 C164 150 136 180 100 195 C64 180 36 150 36 110 V51Z" fill="#101F35"/><rect x="62" y="88" width="76" height="56" rx="10" fill="#8268D9"/><path d="M78 88V76a22 22 0 0 1 44 0v12" fill="none" stroke="#E8B86D" stroke-width="8" stroke-linecap="round"/><circle cx="100" cy="114" r="8" fill="#fff"/></svg></div></div>
+
+<section id="emergency"><div class="w"><h2>🚨 غرفة الطوارئ</h2><p class="sub">اختر موقفك وستظهر لك خطة خطوة بخطوة. تقدّمك يُحفظ في جهازك فقط.</p>
+<select id="es" aria-label="الموقف"></select><div id="eb" style="margin-top:16px"></div></div></section>
+
+<section id="password" class="alt"><div class="w"><h2>🔑 فاحص قوة كلمة المرور</h2>
+<div class="warn">⚠️ لا تكتب كلمة مرورك الحقيقية هنا. جرّب كلمة مشابهة فقط. التحليل يتم داخل المتصفح ولا يُرسل ولا يُخزَّن.</div>
+<div class="card"><input type="password" id="pw" autocomplete="off" placeholder="اكتب كلمة مرور تجريبية"><label style="display:block;margin-top:8px"><input type="checkbox" id="sp"> إظهار الكلمة</label>
+<div class="bar"><i id="pbar"></i></div><b id="pl" style="color:var(--h)">اكتب لنبدأ</b><ul id="pt"></ul></div></div></section>
+
+<section id="links"><div class="w"><h2>🔗 فاحص الروابط التعليمي</h2>
+<div class="warn">هذه أداة تعليمية بقواعد بسيطة ولا تغني عن الحذر. الرابط لا يُفتح ولا يُرسل لأي جهة.</div>
+<div class="card"><input type="text" id="lk" dir="ltr" autocomplete="off" placeholder="example.com/offer"><button class="b" id="lb" style="margin-top:10px">حلّل الرابط</button><div id="lr"></div></div></div></section>
+
+<section id="story" class="alt"><div class="w"><h2>🎒 يوم في حياة طالب</h2><p class="sub">محاكاة آمنة: كل قرار له نتيجة وتفسير.</p><div id="sb" class="card"></div></div></section>
+
+<section id="quiz"><div class="w"><h2>🧠 اختبار سريع</h2><div id="qb" class="card"></div></div></section>
+
+<section id="daily" class="alt"><div class="w"><h2>✅ قائمة الأمان اليومية</h2><div class="card"><h3 id="dc"></h3><div class="bar"><i id="dbar"></i></div><ul class="ck" id="dl"></ul><button class="b" id="dr">إعادة التعيين</button></div></div></section>
+
+<section id="gloss"><div class="w"><h2>📖 قاموس المصطلحات</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px"><input type="text" id="gs" placeholder="ابحث عن مصطلح..." style="flex:2 1 200px"><select id="gf" style="flex:1 1 140px"></select></div><div class="gl" id="gg"></div></div></section>
+
+<section id="help" class="nav-s"><div class="w"><h2>🤝 من أطلب المساعدة؟</h2><p class="sub">لا تواجه الموقف وحدك. هذه الخطوات تنطبق في أغلب الحالات.</p><div class="hp" id="hs"></div><h3 style="margin-top:24px">جهات البلاغ الرسمية</h3><div id="hc"></div></div></section>
+
+<footer><b>الوعي الرقمي خط الدفاع الأول</b><p><a href="#emergency">الطوارئ</a><a href="#password">كلمة المرور</a><a href="#links">الروابط</a><a href="#story">المغامرة</a><a href="#quiz">الاختبار</a><a href="#help">المساعدة</a></p><small>© <span id="yr"></span> التصدي للاختراق والبرمجيات الضارة</small></footer>
+<button id="up" aria-label="للأعلى">↑</button>
+
+<script>
+/* ===== المحتوى: عدّل المصفوفات هنا ===== */
+const FOOTER_YEAR=new Date().getFullYear();
+/* أضف جهات البلاغ الرسمية في بلدك: {n:'اسم الجهة', v:'رقم أو رابط أو بريد'} */
+const HELP_CONTACTS=[];
+const E=[
+{id:'a',t:'ضغطت على رابط مشبوه',s:['افصل الجهاز عن الإنترنت (Wi-Fi/البيانات) فورًا','لا تُدخل أي بيانات إن ظهرت صفحة تسجيل دخول','غيّر كلمات مرور الحسابات المهمة من جهاز آخر','شغّل فحص مضاد الفيروسات الكامل','أخبر ولي أمرك أو معلمك'],x:['لا تتجاهل الأمر وتكمل التصفح','لا تعيد فتح الرابط لتتأكد','لا ترسل الرابط لأصدقائك']},
+{id:'b',t:'حسابي اختُرق',s:['حاول الدخول وغيّر كلمة المرور فورًا','فعّل المصادقة الثنائية','سجّل الخروج من كل الأجهزة','راجع البريد المرتبط وأزل أي عنوان لا تعرفه','استخدم خيار استعادة الحساب في المنصة وبلّغها','نبّه أصدقاءك أن رسائل غريبة قد تصلهم منك'],x:['لا تدفع لأحد مقابل استرجاع الحساب','لا تستخدم نفس كلمة المرور في مكان آخر','لا تتواصل مع المخترق']},
+{id:'c',t:'جهازي أصيب بفيروس',s:['افصل الجهاز عن الشبكة','لا تدخل أي حساب منه حتى يُنظَّف','شغّل فحصًا كاملًا بمضاد فيروسات موثوق','احذف التطبيقات التي لا تعرفها','غيّر كلمات المرور من جهاز سليم','اطلب مساعدة شخص مختص إن استمر الخلل'],x:['لا تحمّل برامج تنظيف من نوافذ منبثقة','لا توصّل فلاشة بأجهزة أخرى','لا تتجاهل الأعراض']},
+{id:'d',t:'شخص يبتزني أو يهددني',s:['اهدأ، فأنت لست المخطئ والابتزاز جريمة','لا تحذف شيئًا: خذ لقطات شاشة وسجّل الحساب والتاريخ','أخبر ولي أمرك أو معلمك أو المرشد اليوم','احظر الحساب وبلّغ المنصة','قدّم بلاغًا للجهة الرسمية بمساعدة شخص بالغ تثق به'],x:['لا تدفع ولا ترسل صورًا أو مالًا','لا ترد على التهديد','لا تخجل ولا تتأخر في طلب المساعدة']},
+{id:'e',t:'أعطيت كلمة مروري لأحد',s:['غيّر كلمة المرور فورًا','سجّل الخروج من كل الجلسات والأجهزة','فعّل المصادقة الثنائية','غيّرها في أي حساب يستخدم الكلمة نفسها','راجع نشاط الحساب الأخير'],x:['لا تنتظر لترى ماذا سيحدث','لا تعيد استخدام الكلمة القديمة','لا تشاركها مجددًا مع أحد']},
+{id:'f',t:'رسالة مشبوهة وصلتني',s:['لا تضغط أي رابط أو مرفق','تحقق من المرسل عبر قناة رسمية أخرى','لا تعطِ رموز التحقق لأي أحد','بلّغ عن الرسالة واحذفها','أخبر من حولك إن كانت منتشرة'],x:['لا ترد بدافع الفضول','لا تصدّق رسائل الجوائز والاستعجال','لا تحمّل ملفات من مرسل مجهول']}];
+const P=['123456','password','qwerty','111111','abc123','admin','iloveyou','000000','12345678','welcome'];
+const S=[
+{t:'تصلك رسالة من زميل: «تسريب اختبار الغد! اضغط الرابط».',c:[['أضغط الرابط بسرعة',0,'روابط التسريبات طُعم شائع للتصيد وسرقة الحسابات.'],['أتجاهلها وأبلغ المعلم',10,'ممتاز: لم تتفاعل وساعدت في حماية غيرك.'],['أرسلها لأصحابي',0,'نشر الرابط يوسّع الضرر.']]},
+{t:'موقع يعرض لعبة مدفوعة مجانًا مع «هاك» للمجوهرات، ويطلب تحميل ملف.',c:[['أحمّل من المتجر الرسمي فقط',10,'المصادر الرسمية أقل خطرًا بكثير.'],['أحمّل الملف وأجرب',0,'الهاكات المزيفة تخفي برامج خبيثة وسارقة كلمات المرور.'],['أطفئ مضاد الفيروسات ليعمل',0,'طلب إيقاف الحماية علامة خطر واضحة.']]},
+{t:'إعلان: «منحة دراسية كاملة! أدخل بياناتك ورسوم رمزية».',c:[['أدفع الرسوم فالمبلغ صغير',0,'طلب دفع مسبق مقابل منحة هو احتيال غالبًا.'],['أبحث عن الجهة في موقعها الرسمي وأسأل المرشد',10,'التحقق من المصدر الرسمي هو الحل.'],['أدخل بياناتي الشخصية وأنتظر',3,'لا تدفع، لكن بياناتك قد تُستغل.']]},
+{t:'طلب صداقة من حساب مجهول يقول إنه من مدرستك.',c:[['أقبل ما دام يبدو لطيفًا',0,'الحسابات الوهمية تبني الثقة ثم تطلب معلومات.'],['أتجاهله وأتحقق من زملائي',10,'التحقق قبل القبول عادة جيدة.'],['أقبل وأمنع ظهور معلوماتي',3,'أفضل من لا شيء، لكن الأسلم عدم القبول.']]},
+{t:'في المقصف شبكة Wi-Fi مجانية بلا كلمة مرور، وتريد تسجيل الدخول لحسابك.',c:[['أتصل وأدخل حساب البنك أو الألعاب',0,'الشبكات المفتوحة قد تُراقَب.'],['أستخدم بيانات جوالي للحسابات المهمة',10,'خيار آمن للأمور الحساسة.'],['أتصل وأتصفح فقط مواقع عامة',5,'مقبول مع الحذر وبدون حسابات.']]}];
+const Q=[
+['أي كلمة مرور الأقوى؟',['12345678','أحمد2010','Tq!9vLm#4zR2','password'],2,'الطول والتنوع وعدم ارتباطها بمعلوماتك يقوي الكلمة.'],
+['ما التصيد الإلكتروني؟',['فيروس يتلف الجهاز','رسائل خادعة لسرقة بياناتك','برنامج لتسريع الإنترنت','لعبة إلكترونية'],1,'التصيد خداع يدفعك لإعطاء معلوماتك طوعًا.'],
+['وصلتك رسالة «ربحت جائزة! اضغط هنا». ماذا تفعل؟',['أضغط بسرعة','أرسلها لأصحابي','أتجاهلها وأبلغ','أرد وأطلب التفاصيل'],2,'الجوائز المفاجئة طُعم شائع.'],
+['ماذا تفعل إذا هددك أحد بنشر صورك؟',['أدفع له','أخبر شخصًا بالغًا موثوقًا وأحتفظ بالأدلة','أحذف كل شيء','أرد عليه بغضب'],1,'الابتزاز جريمة، والدعم والأدلة أهم خطوة.'],
+['ما فائدة المصادقة الثنائية؟',['تسرّع الدخول','تضيف خطوة تحقق ثانية','تحذف الإعلانات','تقوي الواي فاي'],1,'حتى لو عُرفت كلمتك، يحتاج المهاجم خطوة إضافية.'],
+['علامة رابط مشبوه؟',['يبدأ بـ https','نطاق غريب وكلمة «مجاني»','اسم موقع معروف','رابط قصير من صديق موثوق'],1,'النطاقات الغريبة والإغراءات علامات تحذير.'],
+['ما برنامج الفدية؟',['يحذف الإعلانات','يقفل ملفاتك ويطلب مالًا','يسرّع الجهاز','يحفظ كلمات المرور'],1,'ولا تضمن الدفع استعادة الملفات.'],
+['الأفضل لتحميل التطبيقات؟',['أي رابط في المحادثات','مواقع الهاكات','المتجر الرسمي','ملفات من مجهول'],2,'المتجر الرسمي يقلل المخاطر.'],
+['هل تشارك رمز التحقق مع «موظف دعم» اتصل بك؟',['نعم لأنه رسمي','لا أبدًا','فقط لو ألحّ','نعم إن كان يعرف اسمي'],1,'الجهات الرسمية لا تطلب رموز التحقق.'],
+['ماذا تفعل بعد اختراق حسابك؟',['أنتظر','أغيّر كلمة المرور وأفعّل التحقق وأبلغ','أنشئ حسابًا وأنسى القديم','أدفع للمخترق'],1,'السرعة في التغيير والإبلاغ تحدّ من الضرر.']];
+const D=['استخدم كلمة مرور مختلفة لكل حساب مهم','فعّل المصادقة الثنائية','حدّث نظام الجهاز والتطبيقات','لا تضغط روابط من مجهولين','راجع إعدادات الخصوصية','أغلق الواي فاي العام عند عدم الحاجة','لا تشارك رموز التحقق مع أحد','أخبر شخصًا بالغًا إن حدث شيء مريب'];
+const G=[['تصيد','هجمات','رسائل أو مواقع خادعة تنتحل جهة موثوقة لسرقة بياناتك.'],['فدية','هجمات','برنامج خبيث يقفل ملفاتك ويطلب مالًا لفتحها.'],['تشفير','حماية','تحويل البيانات لشكل غير مقروء إلا لمن يملك المفتاح.'],['مصادقة ثنائية','حماية','خطوة تحقق ثانية بعد كلمة المرور، مثل رمز يصل لجوالك.'],['VPN','حماية','شبكة افتراضية تخفي حركة إنترنتك داخل نفق مشفّر.'],['ثغرة','عام','خطأ في برنامج يمكن أن يستغله مهاجم.'],['برنامج خبيث','هجمات','أي برنامج مصمم لإيذاء الجهاز أو سرقة البيانات.'],['هندسة اجتماعية','هجمات','خداع الشخص نفسه ليعطي معلومة بدل اختراق الجهاز.'],['جدار الحماية','حماية','نظام يراقب حركة الشبكة ويمنع غير الآمن.'],['تحديث','حماية','نسخة جديدة تسد ثغرات وتحسّن الأمان.'],['الابتزاز الإلكتروني','هجمات','تهديد بنشر معلومات أو صور مقابل مال أو طلبات.'],['نسخة احتياطية','عام','نسخة من ملفاتك محفوظة بمكان آخر لاستعادتها.']];
+const H=[['أخبر شخصًا بالغًا','ولي أمرك أو معلمك أو المرشد الطلابي.'],['احتفظ بالأدلة','لقطات شاشة وروابط وتواريخ، دون حذف شيء.'],['لا تدفع ولا ترد','خاصة على المبتز أو صاحب العرض المشبوه.'],['بلّغ المنصة','استخدم زر الإبلاغ وحظر الحساب.']];
+
+/* ===== الأدوات ===== */
+const $=s=>document.querySelector(s);
+const ld=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+$('#yr').textContent=FOOTER_YEAR;
+$('#mb').onclick=()=>$('#nv').classList.toggle('o');
+document.querySelectorAll('#nv a').forEach(a=>a.onclick=()=>$('#nv').classList.remove('o'));
+const up=$('#up');up.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+addEventListener('scroll',()=>up.style.display=scrollY>400?'block':'none');
+
+/* الطوارئ */
+const es=$('#es');es.innerHTML='<option value="">— اختر موقفك —</option>'+E.map(e=>`<option value="${e.id}">${e.t}</option>`).join('');
+function rE(){const e=E.find(x=>x.id===es.value),b=$('#eb');if(!e){b.innerHTML='';return}
+const d=ld('e_'+e.id,[]);
+b.innerHTML=`<div class="card pop"><h3>${e.t}</h3><div class="bar"><i id="ep"></i></div><b id="et" style="color:var(--h)"></b><ul class="ck">${e.s.map((s,i)=>`<li class="${d.includes(i)?'d':''}"><label><input type="checkbox" data-i="${i}" ${d.includes(i)?'checked':''}><span>${s}</span></label></li>`).join('')}</ul></div><div class="card av"><h4>⛔ تجنّب</h4><ul>${e.x.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+const up2=()=>{const n=b.querySelectorAll('input:checked').length;$('#ep').style.width=n/e.s.length*100+'%';$('#et').textContent=n===e.s.length?'أحسنت! أنجزت كل الخطوات ✅':`أنجزت ${n} من ${e.s.length}`};
+b.querySelectorAll('input').forEach(c=>c.onchange=()=>{c.closest('li').classList.toggle('d',c.checked);const a=[...b.querySelectorAll('input')].filter(i=>i.checked).map(i=>+i.dataset.i);sv('e_'+e.id,a);up2()});up2()}
+es.onchange=rE;
+
+/* كلمة المرور */
+const pw=$('#pw');$('#sp').onchange=e=>pw.type=e.target.checked?'text':'password';
+pw.oninput=()=>{const v=pw.value,t=[];let s=0;
+if(!v){$('#pbar').style.width='0';$('#pl').textContent='اكتب لنبدأ';$('#pt').innerHTML='';return}
+s+=Math.min(v.length,16)*3;
+const k=[/[a-z]/,/[A-Z]/,/[0-9]/,/[^a-zA-Z0-9]/].filter(r=>r.test(v)).length;s+=k*10;
+if(v.length<8)t.push('اجعلها 12 حرفًا أو أكثر');
+if(k<3)t.push('امزج أحرفًا كبيرة وصغيرة وأرقامًا ورموزًا');
+if(P.some(p=>v.toLowerCase().includes(p))){s-=30;t.push('تحتوي نمطًا شائعًا جدًا')}
+if(/(.)\1{2,}/.test(v)){s-=10;t.push('تجنّب تكرار الحرف نفسه')}
+if(/(012|123|234|345|456|567|678|789|abc|qwe)/i.test(v)){s-=10;t.push('تجنّب التسلسلات السهلة')}
+t.push('لا تستخدم اسمك أو تاريخ ميلادك، وفضّل عبارة مرور طويلة');
+s=Math.max(5,Math.min(100,s));
+const l=s<35?['ضعيفة','#d64545']:s<60?['متوسطة','#E8B86D']:s<80?['جيدة','#8268D9']:['قوية','#26B9AD'];
+const br=$('#pbar');br.style.width=s+'%';br.style.background=l[1];$('#pl').textContent='القوة: '+l[0];$('#pt').innerHTML=t.map(x=>`<li>${x}</li>`).join('')};
+
+/* الروابط */
+$('#lb').onclick=()=>{let u=$('#lk').value.trim(),r=[],sc=0;const o=$('#lr');
+if(!u){o.innerHTML='<p>اكتب رابطًا أولًا.</p>';return}
+const add=(p,m)=>{sc+=p;r.push(m)};
+const low=u.toLowerCase();
+if(!/^https:\/\//.test(low))add(/^http:\/\//.test(low)?25:15,'لا يبدأ بـ https المشفّر');
+const h=low.replace(/^[a-z]+:\/\//,'').split(/[\/?#]/)[0];
+if(/^(bit\.ly|tinyurl\.com|t\.co|cutt\.ly|is\.gd|goo\.gl|rb\.gy)$/.test(h))add(25,'رابط مختصر يخفي الوجهة الحقيقية');
+if(/\.(xyz|top|click|tk|ml|ga|cf|gq|icu|buzz|zip|monster)$/.test(h))add(25,'امتداد نطاق شائع في الحملات الاحتيالية');
+if(/(اربح|مجاني|مجانا|مجانًا|free|win|prize|gift|giveaway|hack|هاك|جائزة|منحة)/i.test(low))add(25,'يحتوي كلمات إغراء مثل «اربح» أو «مجاني»');
+if(/xn--|[^\x00-\x7F]/.test(h))add(25,'أحرف غير لاتينية قد تحاكي أحرفًا مألوفة');
+if(/[a-z]\d[a-z]|rn|vv|0|1l/.test(h.split('.')[0]))add(15,'أحرف أو أرقام تشبه حروفًا (مثل 0 بدل o) أو تبديلات مريبة');
+if(/^\d+\.\d+\.\d+\.\d+/.test(h))add(25,'عنوان رقمي بدل اسم موقع');
+if(low.includes('@'))add(20,'يحتوي رمز @ الذي قد يخفي الوجهة');
+if(h.split('.').length>3||(h.match(/-/g)||[]).length>2)add(15,'نطاقات فرعية أو شرطات كثيرة');
+sc=Math.min(100,sc);
+const l=sc>=60?['خطورة عالية','var(--bad)']:sc>=25?['خطورة متوسطة','#c98a1c']:['خطورة منخفضة (لا يعني أنه آمن)','var(--ok)'];
+o.innerHTML=`<div class="ex pop"><h3 style="color:${l[1]}">${l[0]} — ${sc}/100</h3><ul>${(r.length?r:['لم تظهر علامات واضحة وفق القواعد البسيطة']).map(x=>`<li>${x}</li>`).join('')}</ul></div>`};
+
+/* المغامرة */
+let si=0,ss=0;
+function rS(){const b=$('#sb');
+if(si>=S.length){const m=S.length*10,e=ss>=m*.8?['🏆 درع النجاة','قراراتك ذكية، استمر!']:ss>=m*.4?['🛡️ حذر متوسط','تحتاج مراجعة بعض القرارات.']:['⚠️ في خطر','جرّب الإعادة وتعلّم من التفسيرات.'];
+b.innerHTML=`<div class="pop"><h3>${e[0]}</h3><p>نقاطك: ${ss} من ${m}</p><p>${e[1]}</p><button class="b" id="sr">أعد المغامرة</button></div>`;$('#sr').onclick=()=>{si=0;ss=0;rS()};return}
+const s=S[si];
+b.innerHTML=`<span class="tag">الموقف ${si+1} من ${S.length}</span><h3 style="margin-top:8px">${s.t}</h3>${s.c.map((c,i)=>`<button class="opt" data-i="${i}">${c[0]}</button>`).join('')}<div id="sx"></div>`;
+b.querySelectorAll('.opt').forEach(x=>x.onclick=()=>{const c=s.c[x.dataset.i];ss+=c[1];b.querySelectorAll('.opt').forEach(y=>{y.disabled=true;y.classList.add(s.c[y.dataset.i][1]===10?'ok':'')});x.classList.add(c[1]>=5?'ok':'no');
+$('#sx').innerHTML=`<div class="ex pop"><b>+${c[1]} نقطة</b><p>${c[2]}</p><button class="b" id="sn">${si+1<S.length?'التالي':'عرض النهاية'}</button></div>`;$('#sn').onclick=()=>{si++;rS()}})}
+rS();
+
+/* الاختبار */
+let qi=0,qs=0;
+function rQ(){const b=$('#qb');
+if(qi>=Q.length){const p=Math.round(qs/Q.length*100);b.innerHTML=`<div class="pop"><h3>نتيجتك: ${p}%</h3><p>${qs} من ${Q.length} إجابات صحيحة</p><p>${p>=80?'رائع! أنت جاهز للتصرف بذكاء 🎉':p>=50?'جيد! راجع القاموس وغرفة الطوارئ.':'لا بأس، التعلم رحلة. جرّب مرة أخرى.'}</p><button class="b" id="qr">أعد الاختبار</button></div>`;$('#qr').onclick=()=>{qi=0;qs=0;rQ()};return}
+const q=Q[qi];
+b.innerHTML=`<div class="bar"><i style="width:${qi/Q.length*100}%"></i></div><span class="tag">السؤال ${qi+1} من ${Q.length}</span><h3 style="margin-top:8px">${q[0]}</h3>${q[1].map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('')}<div id="qx"></div>`;
+b.querySelectorAll('.opt').forEach(x=>x.onclick=()=>{const i=+x.dataset.i;if(i===q[2])qs++;b.querySelectorAll('.opt').forEach(y=>{y.disabled=true;if(+y.dataset.i===q[2])y.classList.add('ok')});if(i!==q[2])x.classList.add('no');
+$('#qx').innerHTML=`<div class="ex pop"><b>${i===q[2]?'إجابة صحيحة ✅':'إجابة غير صحيحة ❌'}</b><p>${q[3]}</p><button class="b" id="qn">${qi+1<Q.length?'التالي':'النتيجة'}</button></div>`;$('#qn').onclick=()=>{qi++;rQ()}})}
+rQ();
+
+/* اليومية */
+function rD(){const d=ld('daily',[]);
+$('#dl').innerHTML=D.map((x,i)=>`<li class="${d.includes(i)?'d':''}"><label><input type="checkbox" data-i="${i}" ${d.includes(i)?'checked':''}><span>${x}</span></label></li>`).join('');
+const u=()=>{const a=[...document.querySelectorAll('#dl input')].filter(c=>c.checked).map(c=>+c.dataset.i);sv('daily',a);$('#dc').textContent=`أنت أنجزت ${a.length} من ${D.length}`;$('#dbar').style.width=a.length/D.length*100+'%'};
+document.querySelectorAll('#dl input').forEach(c=>c.onchange=()=>{c.closest('li').classList.toggle('d',c.checked);u()});u()}
+$('#dr').onclick=()=>{sv('daily',[]);rD()};rD();
+
+/* القاموس */
+const gf=$('#gf');gf.innerHTML='<option value="">كل التصنيفات</option>'+[...new Set(G.map(x=>x[1]))].map(c=>`<option>${c}</option>`).join('');
+function rG(){const q=$('#gs').value.trim(),f=gf.value,r=G.filter(x=>(!f||x[1]===f)&&(!q||x[0].includes(q)||x[2].includes(q)||x[0].toLowerCase().includes(q.toLowerCase())));
+$('#gg').innerHTML=r.length?r.map(x=>`<div class="card"><span class="tag">${x[1]}</span><h4 style="margin-top:6px">${x[0]}</h4><p style="margin:0">${x[2]}</p></div>`).join(''):'<p>لا نتائج مطابقة.</p>'}
+$('#gs').oninput=rG;gf.onchange=rG;rG();
+
+/* المساعدة */
+$('#hs').innerHTML=H.map((h,i)=>`<div class="card"><div class="num">${i+1}</div><h4>${h[0]}</h4><p style="margin:0">${h[1]}</p></div>`).join('');
+$('#hc').innerHTML=HELP_CONTACTS.length?HELP_CONTACTS.map(c=>`<div class="card"><b>${c.n}</b><p style="margin:0">${c.v}</p></div>`).join(''):'<div class="ph">📌 مكان مخصص لجهات البلاغ الرسمية في بلدك. أضفها في مصفوفة HELP_CONTACTS داخل الكود.</div>';
+</script>
+</body>
+</html>
